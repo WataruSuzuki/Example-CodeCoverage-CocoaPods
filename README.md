@@ -1,1 +1,1 @@
-# CodeCov-Example-CocoaPods
+# Example-CodeCoverage-CocoaPods
