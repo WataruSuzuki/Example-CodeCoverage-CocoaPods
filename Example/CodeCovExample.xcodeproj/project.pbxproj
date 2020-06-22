@@ -23,6 +23,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		8CAA0C534512AD76B28C54CA /* Pods_CodeCovExample_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78840E84460E7309DD6B40F /* Pods_CodeCovExample_Example.framework */; };
+		CCA2271324F38BF9008CF4FE /* CodeCovExample_ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA2271224F38BF9008CF4FE /* CodeCovExample_ExampleUITests.m */; };
 		FCA786D3F76A660B2BA5D314 /* Pods_CodeCovExample_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33AFDA932F7DEE6426D7998E /* Pods_CodeCovExample_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6003F589195388D20070C39A;
 			remoteInfo = CodeCovExample;
+		};
+		CCA2271524F38BF9008CF4FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6003F589195388D20070C39A;
+			remoteInfo = CodeCovExample_Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -67,6 +75,9 @@
 		AFDDD87EFB6C8E2AAEC7A46D /* Pods-CodeCovExample_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeCovExample_Tests.release.xcconfig"; path = "Target Support Files/Pods-CodeCovExample_Tests/Pods-CodeCovExample_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B78840E84460E7309DD6B40F /* Pods_CodeCovExample_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeCovExample_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A9A84A1AAE6AFC7EE1315D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		CCA2271024F38BF9008CF4FE /* CodeCovExample_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCovExample_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCA2271224F38BF9008CF4FE /* CodeCovExample_ExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCovExample_ExampleUITests.m; sourceTree = "<group>"; };
+		CCA2271424F38BF9008CF4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +103,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CCA2270D24F38BF9008CF4FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -101,6 +119,7 @@
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for CodeCovExample */,
 				6003F5B5195388D20070C39A /* Tests */,
+				CCA2271124F38BF9008CF4FE /* CodeCovExample_ExampleUITests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				BE6AF65BF80BC8E5FFC3A8BA /* Pods */,
@@ -112,6 +131,7 @@
 			children = (
 				6003F58A195388D20070C39A /* CodeCovExample_Example.app */,
 				6003F5AE195388D20070C39A /* CodeCovExample_Tests.xctest */,
+				CCA2271024F38BF9008CF4FE /* CodeCovExample_ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +216,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CCA2271124F38BF9008CF4FE /* CodeCovExample_ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CCA2271224F38BF9008CF4FE /* CodeCovExample_ExampleUITests.m */,
+				CCA2271424F38BF9008CF4FE /* Info.plist */,
+			);
+			path = CodeCovExample_ExampleUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -238,6 +267,24 @@
 			productReference = 6003F5AE195388D20070C39A /* CodeCovExample_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CCA2270F24F38BF9008CF4FE /* CodeCovExample_ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCA2271924F38BF9008CF4FE /* Build configuration list for PBXNativeTarget "CodeCovExample_ExampleUITests" */;
+			buildPhases = (
+				CCA2270C24F38BF9008CF4FE /* Sources */,
+				CCA2270D24F38BF9008CF4FE /* Frameworks */,
+				CCA2270E24F38BF9008CF4FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCA2271624F38BF9008CF4FE /* PBXTargetDependency */,
+			);
+			name = CodeCovExample_ExampleUITests;
+			productName = CodeCovExample_ExampleUITests;
+			productReference = CCA2271024F38BF9008CF4FE /* CodeCovExample_ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -249,6 +296,12 @@
 				ORGANIZATIONNAME = "fan-bot-a8kun";
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
+						TestTargetID = 6003F589195388D20070C39A;
+					};
+					CCA2270F24F38BF9008CF4FE = {
+						CreatedOnToolsVersion = 11.6;
+						DevelopmentTeam = F35G39V2UB;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -269,6 +322,7 @@
 			targets = (
 				6003F589195388D20070C39A /* CodeCovExample_Example */,
 				6003F5AD195388D20070C39A /* CodeCovExample_Tests */,
+				CCA2270F24F38BF9008CF4FE /* CodeCovExample_ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,6 +344,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCA2270E24F38BF9008CF4FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +464,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CCA2270C24F38BF9008CF4FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCA2271324F38BF9008CF4FE /* CodeCovExample_ExampleUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -410,6 +479,11 @@
 			isa = PBXTargetDependency;
 			target = 6003F589195388D20070C39A /* CodeCovExample_Example */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
+		};
+		CCA2271624F38BF9008CF4FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6003F589195388D20070C39A /* CodeCovExample_Example */;
+			targetProxy = CCA2271524F38BF9008CF4FE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -592,6 +666,83 @@
 			};
 			name = Release;
 		};
+		CCA2271724F38BF9008CF4FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = F35G39V2UB;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = CodeCovExample_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.JchanKchan.CodeCovExample-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CodeCovExample_Example;
+			};
+			name = Debug;
+		};
+		CCA2271824F38BF9008CF4FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = F35G39V2UB;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = CodeCovExample_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.JchanKchan.CodeCovExample-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CodeCovExample_Example;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -618,6 +769,15 @@
 			buildConfigurations = (
 				6003F5C3195388D20070C39A /* Debug */,
 				6003F5C4195388D20070C39A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCA2271924F38BF9008CF4FE /* Build configuration list for PBXNativeTarget "CodeCovExample_ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCA2271724F38BF9008CF4FE /* Debug */,
+				CCA2271824F38BF9008CF4FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -17,11 +17,25 @@ default_platform(:ios)
 
 platform :ios do
   desc "Tests SDK via Specta"
-  lane :tests_pod do
+  lane :unit_tests_pod do
       cocoapods(use_bundle_exec: false)
       run_tests(
           workspace: "CodeCovExample.xcworkspace",
-          scheme: "CodeCovExample-Example",
+          scheme: "CodeCovExample_Tests",
+          devices: [
+              'iPhone 11',
+              'iPad Pro (11-inch) (2nd generation)'
+          ],
+          code_coverage: true,
+          derived_data_path: "./fastlane/build",
+          configuration: 'Debug'
+      )
+  end
+  lane :ui_tests_pod do
+      cocoapods(use_bundle_exec: false)
+      run_tests(
+          workspace: "CodeCovExample.xcworkspace",
+          scheme: "CodeCovExample_ExampleUITests",
           devices: [
               'iPhone 11',
               'iPad Pro (11-inch) (2nd generation)'
