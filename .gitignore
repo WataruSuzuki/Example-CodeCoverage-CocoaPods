@@ -36,3 +36,5 @@ Carthage/Build
 #
 
 Example/Pods/
+Example/vendor/bundle/
+Example/fastlane/test_output
