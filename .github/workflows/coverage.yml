@@ -25,7 +25,14 @@ jobs:
         bundle exec fastlane tests_pod
 
     # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    - name: Upload coverage report
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        cd Example/fastlane
+        xcrun xccov view --report --json build/Logs/Test/Run-CodeCovExample-Example-****.**.**_**-**-**-+****.xcresult > result.json
+        ./xcc generate result.json . cobertura-xml --verbose
+        sed -e 's/<tab>/<space>/g' cobertura.xml > coverage.xml
+        mv coverage.xml ../../CodeCovExample/
+        cd ../../CodeCovExample/
+        bash <(curl -s https://codecov.io/bash) -f coverage.xml
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
