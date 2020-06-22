@@ -1,13 +1,13 @@
 //
-//  CDCVExample.m
+//  CDCVFuga.m
 //  CodeCovExample
 //
 //  Created by 鈴木航 on 2020/08/24.
 //
 
-#import "CDCVExample.h"
+#import "CDCVFuga.h"
 
-@implementation CDCVExample
+@implementation CDCVFuga
 
 + (NSString *)helloStaticMethod {
     return @"Hello world";
