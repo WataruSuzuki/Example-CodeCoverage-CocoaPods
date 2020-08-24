@@ -11,7 +11,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  unit-test:
     runs-on: macos-latest
 
     steps:
@@ -22,13 +22,13 @@ jobs:
         cd Example
         gem install bundler:1.17.2
         bundle install
-        bundle exec fastlane tests_pod
+        bundle exec fastlane unit_tests_pod
 
     # Runs a set of commands using the runners shell
     - name: Upload coverage report
       run: |
         cd Example/fastlane
-        xcrun xccov view --report --json build/Logs/Test/Run-CodeCovExample-Example-****.**.**_**-**-**-+****.xcresult > result.json
+        xcrun xccov view --report --json build/Logs/Test/Run-CodeCovExample_Tests-****.**.**_**-**-**-+****.xcresult > result.json
         ./xcc generate result.json . cobertura-xml --verbose
         sed -e 's/<tab>/<space>/g' cobertura.xml > coverage.xml
         mv coverage.xml ../../CodeCovExample/

@@ -5,7 +5,7 @@
 //  Created by WataruSuzuki on 06/19/2020.
 //  Copyright (c) 2020 WataruSuzuki. All rights reserved.
 //
-
+@import CodeCovExample;
 #import "CDCViewController.h"
 
 @interface CDCViewController ()
@@ -18,6 +18,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.labelForStaticMethod.accessibilityIdentifier = @"labelForStaticMethod";
+    self.labelForDynamicMethod.accessibilityIdentifier = @"labelForDynamicMethod";
+    
+    self.labelForStaticMethod.text = [CDCVFuga helloStaticMethod];
+    self.labelForDynamicMethod.text = [[CDCVFuga new] helloDynamicMethod];
 }
 
 - (void)didReceiveMemoryWarning

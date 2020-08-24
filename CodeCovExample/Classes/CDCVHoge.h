@@ -1,5 +1,5 @@
 //
-//  CDCVExample.h
+//  CDCVHoge.h
 //  CodeCovExample
 //
 //  Created by 鈴木航 on 2020/08/24.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CDCVExample : NSObject
+@interface CDCVHoge : NSObject
 
 + (NSString *)helloStaticMethod;
 - (NSString *)helloDynamicMethod;

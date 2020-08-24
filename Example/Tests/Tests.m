@@ -11,11 +11,14 @@
 SpecBegin(InitialSpecs)
 
 describe(@"these will pass", ^{
-    it(@"hello world", ^{
+    it(@"helloStaticMethod", ^{
         waitUntil(^(DoneCallback done) {
-            expect([CDCVExample helloStaticMethod]).to.equal(@"Hello world");
+            expect([CDCVHoge helloStaticMethod]).to.equal(@"Hello world");
             done();
         });
+    });
+    it(@"helloDynamicMethod", ^{
+        expect([[CDCVHoge new] helloDynamicMethod]).to.equal(@"Hello world");
     });
 });
 

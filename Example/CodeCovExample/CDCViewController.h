@@ -10,4 +10,7 @@
 
 @interface CDCViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel *labelForStaticMethod;
+@property (nonatomic, weak) IBOutlet UILabel *labelForDynamicMethod;
+
 @end

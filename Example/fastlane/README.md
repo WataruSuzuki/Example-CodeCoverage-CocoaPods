@@ -16,11 +16,16 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios tests_pod
+### ios unit_tests_pod
 ```
-fastlane ios tests_pod
+fastlane ios unit_tests_pod
 ```
 Tests SDK via Specta
+### ios ui_tests_pod
+```
+fastlane ios ui_tests_pod
+```
+
 
 ----
 
