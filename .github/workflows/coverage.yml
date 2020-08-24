@@ -10,24 +10,29 @@ on:
   pull_request:
     branches: [ master ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: macos-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - name: Run tests
+      run: |
+        cd Example
+        gem install bundler:1.17.2
+        bundle install
+        bundle exec fastlane tests_pod
 
     # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    - name: Upload coverage report
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        cd Example/fastlane
+        xcrun xccov view --report --json build/Logs/Test/Run-CodeCovExample-Example-****.**.**_**-**-**-+****.xcresult > result.json
+        ./xcc generate result.json . cobertura-xml --verbose
+        sed -e 's/<tab>/<space>/g' cobertura.xml > coverage.xml
+        mv coverage.xml ../../CodeCovExample/
+        cd ../../CodeCovExample/
+        bash <(curl -s https://codecov.io/bash) -f coverage.xml
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
