@@ -31,8 +31,6 @@ jobs:
         xcrun xccov view --report --json build/Logs/Test/Run-CodeCovExample_Tests-****.**.**_**-**-**-+****.xcresult > result.json
         ./xcc generate result.json . cobertura-xml --verbose
         sed -e 's/<tab>/<space>/g' cobertura.xml > coverage.xml
-        mv coverage.xml ../../CodeCovExample/
-        cd ../../CodeCovExample/
         bash <(curl -s https://codecov.io/bash) -f coverage.xml
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
