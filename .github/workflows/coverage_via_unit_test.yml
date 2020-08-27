@@ -27,10 +27,16 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Upload coverage report
       run: |
-        cd Example/fastlane
-        xcrun xccov view --report --json build/Logs/Test/Run-CodeCovExample_Tests-****.**.**_**-**-**-+****.xcresult > result.json
-        ./xcc generate result.json . cobertura-xml --verbose
-        sed -e 's/<tab>/<space>/g' cobertura.xml > coverage.xml
-        bash <(curl -s https://codecov.io/bash) -f coverage.xml
+        BINARY_FILE="./Example/fastlane/build/Build/Products/Debug-iphonesimulator/CodeCovExample_Example.app/Frameworks/CodeCovExample.framework/CodeCovExample"
+        bundle install
+        bundle exec slather coverage --cobertura-xml \
+            --scheme CodeCovExample_Tests \
+            --configuration Debug \
+            --binary-file ${BINARY_FILE} \
+            --build-directory Example/fastlane/build/ \
+            --output-directory slather_report \
+            --workspace Example/CodeCovExample.xcworkspace \
+            Example/CodeCovExample.xcodeproj
+        bash <(curl -s https://codecov.io/bash) -f slather_report/cobertura.xml
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
