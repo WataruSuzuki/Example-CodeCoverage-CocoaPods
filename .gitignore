@@ -38,3 +38,6 @@ Carthage/Build
 Example/Pods/
 Example/vendor/bundle/
 Example/fastlane/test_output
+vendor/bundle/
+Example/fastlane/report.xml
+slather_report/
